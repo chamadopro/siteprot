@@ -1,0 +1,485 @@
+/* Botão centralizado entre cards e investidores */
+.cta-out-middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin: 24px 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+/* Estilos Gerais e Reset */
+:root {
+    --primary-color: #17a2b8; /* Azul ChamadoPro */
+    --accent-color: #ff8c00;  /* Laranja para destaque */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --logo-size: 2.2rem;
+    --h1-size: 1.1rem;
+    --h2-size: 1.15rem;
+    --h3-size: 1rem;
+    --subtitle-size: 0.95rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--light-bg), #e9ecef);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+.section {
+    padding: 36px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.subtitle {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(270deg, #17a2b8, #0d6efd, #17a2b8, #0d6efd);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease-in-out infinite;
+    color: #fff;
+    padding: 36px 0 36px 0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Cabeçalhos harmonizados */
+h1, .hero-section h1 {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: var(--h1-size);
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.13);
+    letter-spacing: -0.5px;
+    line-height: 1.12;
+}
+
+h2, .section-title {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: var(--h2-size);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+    letter-spacing: -0.2px;
+    line-height: 1.15;
+}
+
+h3, .differential-item h3, .step-card h3, .form-container h3 {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: var(--h3-size);
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.18;
+}
+
+.subtitle {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: var(--subtitle-size);
+    color: #666;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+}
+
+.hero-section p {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: var(--h1-size);
+    font-weight: 400;
+    margin-bottom: 18px;
+    opacity: 0.95;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.logo i {
+    font-size: var(--logo-size);
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+.btn-cta:hover {
+    background-color: #e57a00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+}
+
+/* Diferenciais Section (Combinado) */
+.differentials-section {
+    background-color: #fff;
+}
+
+.differentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+/* Botão fora do cabeçalho */
+.cta-out {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-bottom: 0;
+    margin-top: -18px;
+    position: relative;
+    z-index: 2;
+}
+
+.differential-item {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--soft-shadow);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.differential-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.differential-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    display: block;
+    position: relative;
+}
+
+.differential-item i::after {
+    content: '';
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 32px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+}
+
+.differential-item h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.differential-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Como Vai Funcionar Section */
+.how-it-works {
+    background-color: var(--light-bg);
+    padding: 60px 20px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.step-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--soft-shadow);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.step-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.step-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step-card li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.step-card li i {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Investors Section */
+.investors-section {
+    background: linear-gradient(135deg, #17a2b8, #007bff);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: var(--soft-shadow);
+    padding: 40px;
+    margin: 40px auto;
+}
+
+.investors-section .section-title {
+    color: #fff;
+}
+
+.investors-section .section-title::after {
+    background-color: #fff;
+}
+
+.investors-section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.btn-email {
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(255,255,255,0.2);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-email:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Forms Section */
+.forms-section {
+    background: #fff;
+}
+
+.forms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.form-container {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--soft-shadow);
+    border: 1px solid var(--border-color);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #e57a00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+
+/* Responsividade para desktop */
+@media (min-width: 768px) {
+    .forms-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
