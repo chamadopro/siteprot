@@ -255,15 +255,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
-    // ===== MOBILE MENU (se necessário) =====
+    // ===== MOBILE MENU (removido) =====
     function createMobileMenu() {
-        const header = document.querySelector('header');
-        if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-toggle')) {
-            const menuToggle = document.createElement('button');
-            menuToggle.className = 'mobile-menu-toggle';
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            header.appendChild(menuToggle);
-        }
+        // Menu mobile removido para evitar elementos isolados
     }
 
     // ===== PERFORMANCE OPTIMIZATION =====
