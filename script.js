@@ -144,16 +144,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== PARALLAX EFFECT =====
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero-section');
-        
-        if (heroSection) {
-            const rate = scrolled * -0.5;
-            heroSection.style.transform = `translateY(${rate}px)`;
-        }
-    });
+    // ===== PARALLAX EFFECT (DESABILITADO) =====
+    // window.addEventListener('scroll', function() {
+    //     const scrolled = window.pageYOffset;
+    //     const heroSection = document.querySelector('.hero-section');
+    //     
+    //     if (heroSection) {
+    //         const rate = scrolled * -0.5;
+    //         heroSection.style.transform = `translateY(${rate}px)`;
+    //     }
+    // });
 
     // ===== COUNTER ANIMATION =====
     function animateCounter(element, target, duration = 2000) {
@@ -175,11 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== AUTO-INCREMENTING COUNTER =====
     function initializeAutoCounter() {
-        const professionalCounter = document.querySelector('.stat-number[data-target="1032"]');
+        const professionalCounter = document.querySelector('.stat-number[data-target]');
         if (!professionalCounter) return;
 
-        // Carregar contador salvo no localStorage ou usar valor inicial
-        let currentCount = parseInt(localStorage.getItem('chamadopro_professionals') || '1032');
+        // Carregar contador salvo no localStorage ou usar valor inicial do HTML
+        const initialValue = professionalCounter.dataset.target || '1032';
+        let currentCount = parseInt(localStorage.getItem('chamadopro_professionals') || initialValue);
         let lastUpdate = parseInt(localStorage.getItem('chamadopro_last_update') || Date.now());
         
         // Calcular incremento baseado no tempo decorrido (1 profissional a cada 2 horas)
@@ -214,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = parseInt(entry.target.dataset.target);
                 const current = parseInt(entry.target.dataset.current || target);
                 
-                if (entry.target.dataset.target === "1032") {
-                    // Para o contador de profissionais, usar o sistema automático
+                if (entry.target.dataset.target && parseInt(entry.target.dataset.target) >= 1000) {
+                    // Para o contador de profissionais (qualquer valor >= 1000), usar o sistema automático
                     initializeAutoCounter();
                 } else {
                     // Para outros contadores, animação normal

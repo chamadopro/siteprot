@@ -116,50 +116,127 @@ main {
     color: #666;
 }
 
-/* Hero Section */
+/* NOVO CABEÇALHO LIMPO */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #17a2b8 50%, #0d6efd 75%, #667eea 100%);
     background-size: 400% 400%;
     animation: gradientMove 12s ease-in-out infinite;
     color: #fff;
-    padding: 20px 0 30px 0;
+    padding: 30px 0 40px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-    min-height: 15vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 2.6rem;
+    color: var(--accent-color);
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.coming-soon-badge {
+    background: linear-gradient(45deg, var(--accent-color), #ff6b35);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.4);
+}
+
+/* Título */
+.hero-content h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Descrição */
+.hero-content p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0 0 35px 0;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estatísticas Compactas */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
 }
 
 /* Floating particles background */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
-}
+/* PSEUDO-ELEMENTO REMOVIDO */
 
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 140, 0, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 60% 60%, rgba(255, 140, 0, 0.05) 0%, transparent 30%);
-    animation: float 25s ease-in-out infinite reverse;
-}
+/* PSEUDO-ELEMENTO REMOVIDO */
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -172,21 +249,7 @@ main {
     100% {background-position: 0% 50%;}
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeInUp 1.5s ease-out;
-    gap: 12px;
-    width: 100%;
-}
+/* CSS DO HERO-CONTENT REMOVIDO */
 
 @keyframes fadeInUp {
     from {
@@ -199,36 +262,7 @@ main {
     }
 }
 
-/* Hero Stats */
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 0;
-    flex-wrap: wrap;
-}
-
-.stat-item {
-    text-align: center;
-    color: #fff;
-}
-
-.stat-number {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    margin-bottom: 2px;
-    animation: countUp 2s ease-out;
-}
-
-.stat-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-}
+/* CSS DAS ESTATÍSTICAS REMOVIDO */
 
 @keyframes countUp {
     from { opacity: 0; transform: scale(0.5); }
@@ -237,15 +271,7 @@ main {
 
 
 /* Cabeçalhos harmonizados */
-h1, .hero-section h1 {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.13);
-    letter-spacing: -0.2px;
-    line-height: 1.3;
-}
+/* CSS DO H1 REMOVIDO */
 
 h2, .section-title {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -280,48 +306,13 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
     line-height: 1.5;
 }
 
-.hero-section p {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    margin-bottom: 0;
-    opacity: 0.95;
-    text-align: center;
-    max-width: 600px;
-    width: 100%;
-    line-height: 1.4;
-}
+/* CSS DO HERO-SECTION P REMOVIDO */
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-}
+/* CSS DO LOGO REMOVIDO */
 
-.logo i {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-}
+/* CSS DO LOGO I E SPAN REMOVIDO */
 
-.logo span {
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.coming-soon-badge {
-    background: linear-gradient(45deg, var(--accent-color), #ff6b35);
-    color: white;
-    padding: 2px 6px;
-    border-radius: 12px;
-    font-size: 0.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    animation: pulse 2s infinite;
-    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.4);
-}
+/* CSS DO BADGE REMOVIDO */
 
 .btn-cta {
     display: inline-block;
@@ -460,7 +451,6 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
     position: relative;
     top: 0;
 }
-}
 
 .differential-item i::after {
     content: '';
@@ -470,7 +460,6 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
     height: 4px;
     background: var(--accent-color);
     border-radius: 2px;
-}
 }
 
 .differential-item h3 {
@@ -946,27 +935,63 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
 }
 
 
+/* CSS DO CABEÇALHO REMOVIDO - SERÁ REFEITO */
+
 /* Responsividade Mobile First */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 15px 0 25px 0;
-        min-height: 20vh;
+        padding: 20px 0 30px 0;
+        min-height: 50vh;
     }
     
     .hero-content {
-        padding: 0 15px;
         max-width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        padding: 0 15px;
     }
     
-    .hero-content h1,
+    .logo-container {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .logo i {
+        font-size: 2.34rem;
+    }
+    
+    .logo span {
+        font-size: 1.8rem;
+    }
+    
+    .coming-soon-badge {
+        padding: 3px 6px;
+        font-size: 0.35rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
     .hero-content p {
-        text-align: center;
-        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .stats-container {
+        gap: 25px;
+        margin-top: 25px;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
     }
     
     .section {
@@ -1010,14 +1035,26 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
         margin-top: 0;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+    
+    .stat-item {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .stat-number {
         font-size: 1.3rem;
+        text-align: center !important;
+        width: 100%;
     }
     
     .stat-label {
         font-size: 0.6rem;
+        text-align: center !important;
+        width: 100%;
     }
     
     .coming-soon-badge {
@@ -1038,38 +1075,58 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
 
 @media (max-width: 480px) {
     .hero-section {
-        padding: 12px 0 20px 0;
-        min-height: 18vh;
+        padding: 15px 0 25px 0;
+        min-height: 45vh;
     }
     
     .hero-content {
         padding: 0 10px;
-        text-align: center;
-        display: flex;
+    }
+    
+    .logo-container {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: 8px;
+        margin-bottom: 15px;
     }
     
-    .hero-content h1,
-    .hero-content p {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .logo {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    .coming-soon-badge {
-        margin-left: 0;
-        margin-top: 5px;
+    .logo i {
+        font-size: 1.95rem;
     }
     
     .logo span {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
+    }
+    
+    .coming-soon-badge {
+        padding: 2.5px 5px;
+        font-size: 0.325rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .stats-container {
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .stat-item {
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
     
     .section-title {
@@ -1128,9 +1185,7 @@ h3, .differential-item h3, .step-card h3, .form-container h3 {
 }
 
 @media (min-width: 1200px) {
-    .hero-section {
-        min-height: 20vh;
-    }
+    /* CSS MOBILE DO HERO-SECTION REMOVIDO */
     
     .section {
         padding: 50px 20px;
