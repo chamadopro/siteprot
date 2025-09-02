@@ -382,14 +382,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = {
                 service: serviceName,
                 description: serviceDesc,
-                type: 'Serviço não encontrado',
+                type: 'Sugestão de serviço',
                 timestamp: new Date().toISOString()
             };
             
             // Aqui você pode enviar para EmailJS ou outro serviço
-            console.log('Serviço solicitado:', formData);
+            console.log('Sugestão de serviço:', formData);
             
-            showAlert(`Obrigado! Recebemos sua solicitação para "${serviceName}". Entraremos em contato em breve para encontrar o profissional ideal!`, 'success');
+            showAlert(`Obrigado pela sugestão! Recebemos sua ideia para "${serviceName}". Vamos considerar adicionar este serviço à nossa plataforma!`, 'success');
             
             missingServiceForm.reset();
             closeModal();
@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function() {
     serviceItems.forEach(item => {
         item.addEventListener('click', () => {
             const serviceName = item.textContent;
-            showAlert(`Você selecionou: "${serviceName}". Em breve poderá contratar este serviço através da nossa plataforma!`, 'info');
+            showAlert(`"${serviceName}" - Este é um dos serviços que estará disponível em nossa plataforma quando lançarmos!`, 'info');
         });
     });
 
